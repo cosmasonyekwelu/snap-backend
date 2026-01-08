@@ -170,7 +170,7 @@ feature/planning
 ```
 
 - All development occurs in `feature/*` branches
-- Feature branches are merged into `develop` after review
+- Feature branches are merged into `develop` after review By the Team Lead
 - `develop` serves as the integration branch
 - Only the team lead merges `develop` into `main`
 
@@ -200,7 +200,7 @@ feature/planning
 
 5. Open a Pull Request to `develop`
 
-6. Review → Merge → Update `develop`
+6. Review → Merge → Update `develop` By Team Lead
 
 ---
 
@@ -226,12 +226,12 @@ feature/planning
 
 ## Acknowledgements
 
-This project is part of a structured backend internship task at Tech Studio, focused on:
+This project is part of a structured FULLSTACK internship task at Tech Studio, focused on:
 
 - Git collaboration workflows
 - REST API design
 - Team communication
-- Modular backend development
+- Modular web app development
 
 ---
 
