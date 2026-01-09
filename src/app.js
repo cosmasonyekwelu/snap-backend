@@ -1,7 +1,7 @@
 const express = require("express");
 
 const app = express();
-const toDoRoutes = require("./routes/toDoRoutes");
+const toDoRoutes = require("./routes/todo.routes");
 
 app.use(express.json());
 
