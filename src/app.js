@@ -5,7 +5,6 @@ const toDoRoutes = require("./routes/toDoRoutes");
 
 app.use(express.json());
 
-app.use("/api/todo", toDoRoutes);
+app.use("/api/todos", toDoRoutes);
 
 module.exports = app;
-
