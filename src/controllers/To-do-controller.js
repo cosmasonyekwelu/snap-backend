@@ -1,7 +1,5 @@
 const Todo = require("../models/To-do");
 
-const TEMP_USER_ID = "64f3c1f8b0e123456789abcd";
-
 const createTodo = async (req, res) => {
   try {
     const { title, description, completed, dueDate, user } = req.body;
@@ -9,17 +7,16 @@ const createTodo = async (req, res) => {
     if (!title) {
       return res
         .status(400)
-        .json({ status: error, message: "Title is required" });
+        .json({ status: "error", message: "Title is required" });
     }
 
-    // if (!user) {
-    //   return res
-    //     .status(400)
-    //     .json({ status: error, message: "User is required" });
-    // }
+    if (!user) {
+      return res
+        .status(400)
+        .json({ status: "error", message: "User is required" });
+    }
 
-    const todoUser = user || TEMP_USER_ID;
-
+    let parsedDueDate;
     if (dueDate) {
       const d = new Date(dueDate);
       if (!isNaN(d)) parsedDueDate = d;
@@ -30,7 +27,7 @@ const createTodo = async (req, res) => {
       description,
       completed,
       dueDate: parsedDueDate,
-      user: todoUser,
+      user,
     });
 
     return res.status(201).json({
@@ -118,5 +115,3 @@ const deleteTodo = async (req, res) => {
 };
 
 module.exports = { createTodo, getTodos, getTodoById, updateTodo, deleteTodo };
-
-
